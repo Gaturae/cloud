@@ -1,0 +1,156 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.clear{ 
+	clear:both
+}
+
+#head{
+	
+	height: 135px;
+	
+}
+
+
+#foot{
+	
+	text-align: center;
+	position: relative;
+	bottom: 0;
+	width: 100%;
+
+	
+}
+
+#logo_img{
+	
+	width: 28%;
+	height: 35%;
+	margin-left: 37%;
+	margin-top: 22%;
+	
+}
+
+#head_logo{
+	
+	float: left;
+	width: 16%;
+	height: 100%
+	
+}
+
+#big_text{
+	
+	float:left;
+	width:38%;
+	height:100%;  
+	margin-left:22%; 
+	vertical-align: center; 
+}
+
+#small_text{
+	
+	float: right;
+	width:17%;
+	height:100%; 
+	
+}
+
+#head_news{
+	
+	height:40px;
+	width:100%;
+	line-height:40px; 
+	text-align:center;	
+	background-color: #A7AAFF;
+}
+
+
+#homePage{
+	
+	height:500px;
+	background-color: #BFE5F1;
+	text-align:center;	
+	border-bottom: 2px solid #c0c0c0;
+}
+
+#disk{
+	
+	float: left;
+	margin-top:7em;
+	margin-left:12%;
+	border: solid;
+	border-color: black;
+	width: 181px;
+	height: 235px;
+	
+}
+
+#addspace{
+	
+	float: right;
+	margin-right:12%;
+	margin-top:7em;
+	border: solid;
+	border-color: black;
+	width: 181px;
+	height: 235px;
+		
+}
+
+#registPage{
+	
+	height:500px;
+	border-bottom: 2px solid #c0c0c0;
+	
+}
+
+#loginPage{
+	
+	height:500px;
+	border-bottom: 2px solid #c0c0c0;
+	
+}
+
+#loginPanel{
+
+	width: 361px;
+	height:347px;
+	background-color: white;
+	border-left:2px solid #c0c0c0;
+	border-right:2px solid #c0c0c0;
+	border-top:2px solid #c0c0c0;
+	border-bottom:2px solid #c0c0c0;
+	float: right;
+	margin-right: 100px;
+	margin-top: 60px;
+	
+}
+
+#loginUser{
+	margin-left: 58px;
+	margin-bottom: 37px;
+	margin-top: 52px;
+}
+
+#loginPassword{
+	
+	margin-left: 58px;
+	margin-bottom: 42px;
+	
+}
+
+#loginSubmit{
+	
+	margin-left: -6px;
+	
+}
+
+#pwdChange{
+	
+	height:500px;
+	border-bottom: 2px solid #c0c0c0;
+	
+}

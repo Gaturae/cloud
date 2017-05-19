@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.gbat.entity.UserMapper">
+	<!-- 开启二级缓存 缓存策略: 
+	    LRU – 最近最少使用的:移除最长时间不被使用的对象。
+	    FIFO – 先进先出:按对象进入缓存的顺序来移除它们。 
+	    SOFT – 软引用:移除基于垃圾回收器状态和软引用规则的对象。
+		WEAK – 弱引用:更积极地移除基于垃圾收集器状态和弱引用规则的对象。
+		 -->
+	<cache eviction="FIFO" 
+	flushInterval="60000" 
+	size="512" 
+	readOnly="true" />
+	
+	<!-- 声明一个sql片段 -->
+	<sql id="userColumn">
+		id,username,password,nickname,authority
+	</sql>
+
+	<!-- useGeneratedKeys 启动回写功能 把主键ID自动写到被插入对象的ID keyColumn="id" 数据库的主键字段 keyProperty="id" 
+		pojo对象与之对应的属性 -->
+	<insert id="insertUser" useGeneratedKeys="true" keyColumn="id"
+		keyProperty="id">
+		insert into user(
+		<include refid="userColumn"></include>
+		)
+		values(null,#{username},#{password},#{nickname},#{authority})
+	</insert>
+
+
+	<!-- #{看做是PrepareStatement 占位符 可以防止sql注入 } ${}相当于就是一个字符串的拼接 不安全，能够sql注入 
+		不能够自动发生类型处理 通过${}这种方式去传递参数， 想获得参数的内容通过${value}获取 -->
+	<select id="queryForTableName" resultType="com.gbat.pojo.User">
+		select
+		*
+		from
+		${tableName}
+	</select>
+	
+	<delete id="deleteByUsername" parameterType="String">
+		delete from user
+		where username= #{username}
+	
+	</delete>
+	
+	<select id="getByname" resultType="com.gbat.pojo.User" parameterType="String">
+		select 
+		* 
+		from user
+		where username= #{username}	
+	</select>
+	
+	<update id="updateUser" parameterType="com.gbat.pojo.User">
+		update user set
+		username= #{username},password= #{password},nickname= #{nickname},authority= #{authority}
+		where id=#{id}
+	</update>
+	
+
+
+</mapper>
